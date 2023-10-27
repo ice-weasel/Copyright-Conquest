@@ -4,4 +4,4 @@ export default function Howitworks(){
             How it works.
         </div>
     )
-}
+};

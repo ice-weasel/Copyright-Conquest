@@ -6,7 +6,7 @@ import Head from 'next/head';
 export default function Aboutpage() {
 return(
     <div>
-        hi
+        About
     </div>
 )
 }
