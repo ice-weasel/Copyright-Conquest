@@ -8,15 +8,8 @@ import Selectgame from './pages/Selectgame';
 import Finishpage from './pages/Finishpage';
 export default function Home() {
   return (
-    <div>
-
-      <div>
-
-<Finishpage/>
-       
-      </div>
+   <main>
     
-
-    </div>
+   </main>
   )
-}
+};
