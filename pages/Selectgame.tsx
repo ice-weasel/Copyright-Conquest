@@ -35,8 +35,7 @@ export default function Selectgame() {
                     Quiz
                   </h5>
                   <p className="mb-3 font-normal text-gray-700">
-                    Here are the biggest enterprise technology acquisitions of
-                    2021 so far, in reverse chronological order.
+                   A fun trivia which teaches you about how IP works
                   </p>
 
                   <Link
@@ -44,7 +43,7 @@ export default function Selectgame() {
                     passHref
                     className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
                   >
-                    Read more
+                    Start
                     <svg
                       className="w-3.5 h-3.5 ml-2"
                       aria-hidden="true"
@@ -75,11 +74,10 @@ export default function Selectgame() {
                 />
                 <div className="p-5">
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
-                    Select Option
+                    Find the real one
                   </h5>
                   <p className="mb-3 font-normal text-gray-700">
-                    Here are the biggest enterprise technology acquisitions of
-                    2021 so far, in reverse chronological order.
+                    A tricky game in which you have to find the real company
                   </p>
 
                   <Link
@@ -87,7 +85,7 @@ export default function Selectgame() {
                     passHref
                     className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
                   >
-                    Read more
+                    Start
                     <svg
                       className="w-3.5 h-3.5 ml-2"
                       aria-hidden="true"

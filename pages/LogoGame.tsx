@@ -1,5 +1,5 @@
-"use client"
-import React, { useState } from 'react';
+"use client";
+import React, { useState } from "react";
 import "tailwindcss/tailwind.css";
 
 interface LogoQ {
@@ -24,21 +24,21 @@ const LogoData: LogoQ[] = [
     options: [
       "/Google1.jpg",
       "/googlefake2.png",
-      "/Google1.jpg",
+      "/realGoogle.png",
       "/googlefake2.png",
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
   },
   {
     Questionnum: "Two",
-    question: "Who is the biggest dumdum?",
+    question: "Select the correct logo",
     options: [
-      "/Google1.jpg",
-      "/googlefake2.png",
-      "/Google1.jpg",
-      "/googlefake2.png",
+      "/adi_fake2.png",
+      "/adi_fake3.png",
+      "/adibas.jpg",
+      "/adidas.png",
     ],
-    correctAnswer: 0,
+    correctAnswer: 3,
   },
   {
     Questionnum: "Three",
@@ -78,18 +78,20 @@ const LogoGame: React.FC = () => {
 
   const handleAnswerClick = (answerIndex: number, correctAnswer: number) => {
     if (selectedAnswer === null) {
+      // Check if the answer has not been selected yet
       setSelectedAnswer(answerIndex);
       if (answerIndex === correctAnswer) {
+        // Award 10 points for a correct answer
         setScore((prevScore) => ({
           totalScore: prevScore.totalScore + 10,
         }));
       }
     }
   };
-
+  
   return (
-    <main className="bg-white  min-h-screen flex flex-rows   ">
-     <div className=''>
+    <main className="bg-url min-h-screen flex flex-rows" style={{ backgroundImage: `url('/bg-image.jpg')` }}>
+      <div className="">
         <div className="flex  justify-center mt-16">
           <ul
             className="flex rounded-full bg-gray-800 gap-4 text-sm font-medium"
@@ -119,63 +121,68 @@ const LogoGame: React.FC = () => {
             ))}
           </ul>
         </div>
-        </div>
-        <div id="default-tab-content" className="w-full p-16 g-slate-500 text-center">
-          {LogoData.map((quiz, quizIndex) => (
-            <div
-              key={quiz.Questionnum}
-              className={`${
-                activeTab === quiz.Questionnum.toLowerCase() ? "" : "hidden"
-              } p-4 bg-white  rounded-lg  h-48 dark:bg-gray-800`}
-              id={quiz.Questionnum.toLowerCase()}
-              role="tabpanel"
-              aria-labelledby={`${quiz.Questionnum.toLowerCase()}-tab`}
-            >
-              <h2 className="mb-3 text-xl font-extrabold tracking-tight text-white dark:text-white">
-                {quiz.Questionnum}
-              </h2>
-              <p className="mb-3 mt-7 text-3xl text-gray-500 dark:text-white">
-                {quiz.question}
-              </p>
-              <div className="grid mb-8 mt-32 gap-4 w-full rounded-lg shadow-xl md:mb-12 md:grid-cols-2">
-                {quiz.options.map((option, optionIndex) => (
-                  <button
-                    key={optionIndex}
-                    className={`flex flex-col items-center justify-center p-8 text-center rounded-lg hover:shadow-md dark:bg-gray-800 ${
-                      selectedAnswer === optionIndex ? "bg-green-300" : ""
-                    }`}
-                    onClick={() => handleAnswerClick(optionIndex, quiz.correctAnswer)}
-                  >
-                    <img
-                      src={option}
-                      alt={`Option ${optionIndex + 1}`}
-                      className="w-32 h-32 mb-4"
-                    />
-                    <blockquote className="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                        Option {optionIndex + 1}
-                      </h3>
-                    </blockquote>
-                  </button>
-                ))}
-                {selectedAnswer !== null && (
-                  <p
-                    className={`text-xl bg-slate-700 rounded-lg my-7 ${
-                      selectedAnswer === quiz.correctAnswer
-                        ? "text-green-500"
-                        : "text-red-500"
-                    }`}
-                  >
-                    {selectedAnswer === quiz.correctAnswer
-                      ? "Correct Answer!"
-                      : "Wrong Answer!"}
-                  </p>
-                )}
-              </div>
+      </div>
+      <div
+        id="default-tab-content"
+        className="w-full p-16 g-slate-500 text-center"
+      >
+        {LogoData.map((quiz, quizIndex) => (
+          <div
+            key={quiz.Questionnum}
+            className={`${
+              activeTab === quiz.Questionnum.toLowerCase() ? "" : "hidden"
+            } p-4 bg-white  rounded-lg  h-48 dark:bg-gray-800`}
+            id={quiz.Questionnum.toLowerCase()}
+            role="tabpanel"
+            aria-labelledby={`${quiz.Questionnum.toLowerCase()}-tab`}
+          >
+            <h2 className="mb-3 text-xl font-extrabold tracking-tight text-white dark:text-white">
+              {quiz.Questionnum}
+            </h2>
+            <p className="mb-3 mt-7 text-3xl text-gray-500 dark:text-white">
+              {quiz.question}
+            </p>
+            <div className="grid mb-8 mt-32 gap-4 w-full rounded-lg shadow-xl md:mb-12 md:grid-cols-2">
+              {quiz.options.map((option, optionIndex) => (
+                <button
+                  key={optionIndex}
+                  className={`flex flex-col items-center justify-center p-8 text-center rounded-lg hover:shadow-md dark:bg-gray-800 ${
+                    selectedAnswer === optionIndex ? "bg-green-300" : ""
+                  }`}
+                  onClick={() =>
+                    handleAnswerClick(optionIndex, quiz.correctAnswer)
+                  }
+                >
+                  <img
+                    src={option}
+                    alt={`Option ${optionIndex + 1}`}
+                    className="w-32 h-32 mb-4"
+                  />
+                  <blockquote className="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                      Option {optionIndex + 1}
+                    </h3>
+                  </blockquote>
+                </button>
+              ))}
             </div>
-          ))}
-        </div>
-      
+            {selectedAnswer !== null && (
+                <p
+                  className={`text-xl bg-slate-700 rounded-lg my-7 ${
+                    selectedAnswer === quiz.correctAnswer
+                      ? "text-green-500"
+                      : "text-red-500"
+                  }`}
+                >
+                  {selectedAnswer === quiz.correctAnswer
+                    ? "Correct Answer!"
+                    : "Wrong Answer!"}
+                </p>
+              )}
+          </div>
+        ))}
+      </div>
+
       <div className="justify-end mr-24">
         <div className=" mt-64 p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
           <div className="flex items-center justify-between mb-4">
@@ -184,13 +191,16 @@ const LogoGame: React.FC = () => {
             </h5>
           </div>
           <div className="flow-root">
-            <ul role="list" className="divide-y divide-gray-200 dark:divide-gray-700">
+            <ul
+              role="list"
+              className="divide-y divide-gray-200 dark:divide-gray-700"
+            >
               <li className="py-3 sm:py-4">
                 <div className="flex items-center space-x-4">
                   <div className="flex-shrink-0"></div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
-                      Your Score
+                    <p className="text-sm font-medium text-gray-900 px-7  dark:text-white">
+                      Score
                     </p>
                   </div>
                   <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
