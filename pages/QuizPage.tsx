@@ -20,45 +20,42 @@ const initialScore: Scorecard = {
 const QuizData: Quiz[] = [
   {
     Questionnum: "One",
-    question: "Who is the biggest dumdum?",
+    question: 'What does the term "intellectual property" refer to?',
     options: [
-      "Diya",
-      "Diya (but more dumdum)",
-      "Diya (a little less dumdum)",
-      "Diya (Dumdum overload)",
+      "Things you can touch and hold",
+      "Ideas and creations of the mind",
+      "Physical possessions",
+      "Ancient artifacts",
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
   },
   {
     Questionnum: "Two",
-    question: "Who is the biggest dumdum?",
+    question: "Which of the following is an example of intellectual property?",
     options: [
-      "Still Diya",
-      "Still Diya (but more dumdum)",
-      "Still Diya (a little less dumdum)",
-      "Still Diya (Dumdum overload)",
+      "A bicycle",
+      "A favorite book",
+      "A basketball",
+      "A pair of shoes",
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
   },
   {
     Questionnum: "Three",
-    question: "Who is the biggest dumdum?",
-    options: [
-      "Still Diya(again)",
-      "Still Diya(but more dumdum)(again)",
-      "Still Diya(a little less dumdum)(again)",
-      "Still Diya(Dumdum overload)(again)",
-    ],
-    correctAnswer: 0,
+    question:
+      " What protects your original stories, artwork, and music from being copied without your permission?",
+    options: ["Trademark", "Patent", "Copyright", "Trade secret"],
+    correctAnswer: 2,
   },
   {
     Questionnum: "Four",
-    question: "Who is the biggest dumdum?",
+    question:
+      "What should you do if you want to use a picture or song created by someone else for a school project or a presentation?",
     options: [
-      "Still Diya(again)(for the fourth time)",
-      "Still Diya(but more dumdum)(again)(for the fourth time)",
-      "Still Diya(a little less dumdum)(again)(for the fourth time)",
-      "Still Diya(Dumdum overload)(again)(for the fourth time)",
+      "Always ask for permission from the creator or check if it's in the public domain",
+      "Use it without asking for permission",
+      "Use it and give credit to anyone you borrowed it from",
+      "Ignore it and find something else to use",
     ],
     correctAnswer: 0,
   },
@@ -195,8 +192,8 @@ const QuizPage: React.FC = () => {
                 <div className="flex items-center space-x-4">
                   <div className="flex-shrink-0"></div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
-                      Your Score
+                    <p className="text-sm font-medium text-gray-900 px-7  dark:text-white">
+                      Score
                     </p>
                   </div>
                   <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
