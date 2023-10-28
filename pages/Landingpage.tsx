@@ -6,6 +6,7 @@ import Selectgame from './Selectgame';
 import Link from 'next/link';
 import Head from 'next/head';
 import Router from 'next/router';
+import "tailwindcss/tailwind.css";
 
 export default function Landingpage() {
     return (
