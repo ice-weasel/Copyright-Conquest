@@ -7,7 +7,7 @@ export default function Selectgame() {
   return (
     <div className="min-h-screen bg-cover">
       <div
-        className="h-screen w-full bg-white relative overflow-hidden"
+        className="h-screen w-full  bg-white relative overflow-hidden"
         style={{
           backgroundImage:
             "url('https://www.hdwallpapers.in/download/zelda_hd_the_legend_of_zelda_tears_of_the_kingdom_2-1920x1080.jpg')",
@@ -83,7 +83,7 @@ export default function Selectgame() {
                   </p>
 
                   <Link
-                    href="/Aboutpage"
+                    href="/LogoGame"
                     passHref
                     className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
                   >
